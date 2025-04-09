@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  shutdown: graceful
+
+spring:
+  jpa:
+    hibernate:
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: none
+  datasource:
+    primary:
+      jdbc-url: jdbc:mysql://localhost:3306/checkout-kata
+      username: root
+      password: root
+      databaseName: checkout-kata
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      serverName:
+      cachePrepStmts: true
+      prepStmtCacheSize: 450
+      prepStmtCacheSqlLimit: 2048
+      useServerPrepStmts: true
+      connection-timeout: 300000
+      validation-timeout: 3000
+      max-lifetime: 300000
+      poolName: XC-HikariPool-Default
+      hikari:
+        minimum-idle: 15
+        maximum-pool-size: 15
+logging:
+  level:
+    org:
+      flywaydb: DEBUG
