@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS T_ITEM
+(
+    id          BIGINT(20) NOT NULL AUTO_INCREMENT,
+    name        VARCHAR(255) NOT NULL,
+    unit_price  decimal(19,2) NOT NULL,
+
+    PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+ALTER TABLE T_ITEM
+ADD CONSTRAINT unique_name UNIQUE (name);
+
+
+CREATE TABLE IF NOT EXISTS T_OFFER
+(
+    id          BIGINT(20) NOT NULL AUTO_INCREMENT,
+    quantity    BIGINT(20) NOT NULL,
+    discount_price  decimal(19,2) NOT NULL,
+    item_id     BIGINT(20) NOT NULL,
+
+    PRIMARY KEY (id),
+    CONSTRAINT `fk_offer__item` FOREIGN KEY (`item_id`) REFERENCES `T_ITEM` (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8;

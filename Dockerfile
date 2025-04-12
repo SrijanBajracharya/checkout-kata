@@ -3,7 +3,7 @@ FROM amazoncorretto:21-alpine
 VOLUME /tmp
 
 # Copy the built JAR file into the container
-COPY target/tisha-*.jar /app.jar
+COPY target/kata-*.jar /app.jar
 
 COPY src/main/resources/config/flyway/db/migration /app/resources/config/flyway/db/migration
 
