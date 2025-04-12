@@ -20,7 +20,7 @@ public class OfferEntity {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "item_id", nullable = false, unique = true)
+    @JoinColumn(name = "item_id")
     private ItemEntity item;
 
     @Column(name = "quantity", nullable = false)

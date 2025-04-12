@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ItemController {
 
+    private final ItemGateway itemGateway;
+
     @PostMapping
-    public ResponseEntity<CreateItemResponse> createItem(@RequestBody @Valid CreateItemRequest createItemRequest){
-        return null;
+    public ResponseEntity<CreateItemResponse> upsertItem(@RequestBody @Valid CreateItemRequest createItemRequest){
+        return ResponseEntity.ok(itemGateway.upsertItem(createItemRequest));
     }
 }
