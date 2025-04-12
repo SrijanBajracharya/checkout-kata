@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  shutdown: graceful
+
+spring:
+  jpa:
+    hibernate:
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: none
+  flyway:
+    enabled: true
+    locations: classpath:/config/flyway/db/migration
+    out-of-order: true
+    baseline-on-migrate: true
+logging:
+  level:
+    org:
+      flywaydb: DEBUG
+

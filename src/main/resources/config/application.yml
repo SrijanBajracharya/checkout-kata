@@ -9,10 +9,10 @@ spring:
       ddl-auto: none
   datasource:
     primary:
-      jdbc-url: jdbc:mysql://localhost:3306/checkout-kata
+      jdbc-url: jdbc:mysql://localhost:3306/checkout_kata?allowPublicKeyRetrieval=true&useSSL=false
       username: root
       password: root
-      databaseName: checkout-kata
+      databaseName: checkout_kata
       driver-class-name: com.mysql.cj.jdbc.Driver
       serverName:
       cachePrepStmts: true
