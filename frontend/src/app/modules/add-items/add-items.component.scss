@@ -1,0 +1,73 @@
+@use '../../scss/variables' as *;
+
+body{
+    background-color: #fcfcfc;
+}
+
+.add-item__wrapper{
+    width: 40%;
+    min-width: 480px;
+    margin: 0 auto;
+    padding: $spacing-6 0;
+    border-radius: $spacing-1;
+    box-shadow: 0 $spacing-2 $spacing-2 $spacing-2 rgba(0, 0, 0, 0.1); 
+
+    h2{
+        text-align: center;
+    }
+
+    .form-wrapper{
+        width:80%;
+        margin: 0 auto;
+        gap: $spacing-2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    label{
+        color: $text-color;
+        font-weight: bold;
+    }
+
+    .input-groups{
+        display: flex;
+        gap: $spacing-2;
+    }
+
+    .input-group{
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-1;
+        input{
+            width: 100%;
+            border: $border-1 solid $text-color;
+            border-radius: $spacing-1;
+            background-color: transparent;
+            padding: $spacing-2;
+            margin: $spacing-2 0;
+            color: $text-color;
+            box-sizing: border-box;
+        }
+
+    }
+
+    .button-group{
+        margin: 0 auto;
+        width: 100%;
+        
+        button{
+            width: 100%;
+            padding: $spacing-2;
+
+        }
+    }
+
+}
+
+.text-danger{
+    color: $text-danger;
+}
+
+.scan-button{
+    text-align: right;
+}

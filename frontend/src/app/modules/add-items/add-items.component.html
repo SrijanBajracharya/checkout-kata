@@ -1,0 +1,56 @@
+
+<div class = "dashboard-page">
+    <div class="scan-button">
+        <button type="submit" (click)="onScanButton()" class="btn btn-success" id="btnScan">Scan item</button>
+    </div>
+    <div class="add-item__wrapper">
+        <h2>Add New Item</h2>
+        <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+      
+            <div class="form-wrapper">
+                <div class="input-group">
+                    <label for="name">Item Name</label>
+                    <input id="name" type="text" class="form-control" formControlName="name" />
+                    <div class="text-danger" *ngIf="itemForm.get('name')?.invalid && itemForm.get('name')?.touched">
+                        Item name is required.
+                    </div>
+                </div>
+    
+                <div class="input-group">
+                    <label for="unitPrice">Unit Price</label>
+                    <input id="unitPrice" type="number" class="form-control" formControlName="unitPrice" />
+                    <div class="text-danger" *ngIf="itemForm.get('unitPrice')?.invalid && itemForm.get('unitPrice')?.touched">
+                        Unit price is required.
+                    </div>
+                </div>
+    
+                <div class="offer-toggle">
+                    <input type="checkbox" id="hasOffer" formControlName="hasOffer" class="form-check-input" />
+                    <label for="hasOffer" class="form-check-label">Add Offer</label>
+                </div>
+                
+                <div formGroupName="offer" *ngIf="itemForm.get('hasOffer')?.value">
+                    <div class="input-group">
+                        <label for="quantity">Offer Quantity</label>
+                        <input id="quantity" type="number" class="form-control" formControlName="quantity" />
+                        <div class="text-danger" *ngIf="itemForm.get('offer.quantity')?.invalid && itemForm.get('offer.quantity')?.touched">
+                            Quantity is required and must be at least 1.
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="discountPrice">Discount Price</label>
+                        <input id="discountPrice" type="number" class="form-control" formControlName="discountPrice" />
+                        <div class="text-danger" *ngIf="itemForm.get('offer.discountPrice')?.invalid && itemForm.get('offer.discountPrice')?.touched">
+                            Discount price is required and must be greater than 0.
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary" [disabled]="itemForm.invalid">Add To Inventory</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

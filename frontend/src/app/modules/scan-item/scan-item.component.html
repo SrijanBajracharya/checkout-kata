@@ -1,0 +1,29 @@
+<div class="checkout-container">
+    <form [formGroup]="checkoutForm" (ngSubmit)="onScan()" class="form">
+        <select formControlName="itemName">
+            <option value="">Select Item</option>
+            <option *ngFor="let item of items$ | async" [value]="item">{{ item }}</option>
+          </select>
+      <input type="number" formControlName="quantity" placeholder="Quantity" min="1" />
+      <button type="submit" [disabled]="checkoutForm.invalid">Scan</button>
+    </form>
+  
+    <div class="scanned-list">
+      <h3>Scanned Items:</h3>
+      <ul>
+        <li *ngFor="let item of scannedItems">{{ item.itemName }} - Qty: {{ item.quantity }}</li>
+      </ul>
+    </div>
+  
+    <button (click)="onCheckout()" [disabled]="scannedItems.length === 0">Checkout</button>
+  
+    <div *ngIf="checkoutResponse" class="checkout-response">
+      <h3>Checkout Summary</h3>
+      <ul>
+        <li *ngFor="let item of checkoutResponse.items">
+          {{ item.name }} - Total: {{ item.total | currency }}
+        </li>
+      </ul>
+      <strong>Grand Total: {{ checkoutResponse.total | currency }}</strong>
+    </div>
+  </div>
