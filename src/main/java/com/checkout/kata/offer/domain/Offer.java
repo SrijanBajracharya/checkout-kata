@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 public class Offer {
 
     private Long id;
-    private Long quantity;
+    private Integer quantity;
     private BigDecimal discountPrice;
 
 }

@@ -25,6 +25,6 @@ public class ItemEntity {
     @Column(name = "unit_price")
     private BigDecimal unitPrice;
 
-    @OneToOne(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private OfferEntity offer;
 }

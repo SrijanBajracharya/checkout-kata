@@ -11,6 +11,6 @@ import java.math.BigDecimal;
 @Builder
 public class OfferRequest {
 
-    private Long quantity;
+    private Integer quantity;
     private BigDecimal discountPrice;
 }
