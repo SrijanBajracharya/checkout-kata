@@ -30,3 +30,8 @@ logging:
   level:
     org:
       flywaydb: DEBUG
+
+app:
+  swagger:
+    doc-generation: ${DOC_GENERATION:true}
+

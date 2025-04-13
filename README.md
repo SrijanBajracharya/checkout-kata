@@ -29,6 +29,7 @@ The project consists of two main endpoints:
 - **Docker**: Simplified deployment and containerization.
 - **mysql**: The relational database used for persisting data.
 - **angular 19**
+- **swagger-ui**
 
 ---
 
@@ -50,6 +51,13 @@ git clone <https://github.com/SrijanBajracharya/checkout-kata>
 cd checkout-kata
 ```
 
+### Running the application Docker Container
+
+You can also run the application in a Docker container using Docker Compose. To do so, run:
+```bash
+docker-compose up
+```
+
 ### Build the Application
 
 Compile and package the application:
@@ -58,17 +66,11 @@ mvn clean install
 ```
 
 ### Running the Application
-Start the application:
+Start the application after running the docker container
 ```bash
 mvn spring-boot:run
 ```
 
-### Running the application Docker Container
-
-You can also run the application in a Docker container using Docker Compose. To do so, run:
-```bash
-docker-compose up
-```
 
 Access the application on:
 - **http://localhost:8080**
@@ -79,6 +81,13 @@ Access the application on:
 
 Once running, the application is available at:
 - **Web**: `http://localhost:8080`
+- **API Docs (Swagger UI)**: `http://localhost:8080/swagger-ui.html`
+- To enable ControllerAdvice set doc-generation to false and restart server.
+```
+app:
+  swagger:
+    doc-generation: false
+```
 
 ---
 
