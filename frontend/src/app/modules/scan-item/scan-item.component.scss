@@ -1,0 +1,85 @@
+@use '../../scss/variables' as *;
+
+body{
+    background-color: #fcfcfc;
+}
+
+.checkout-container {
+    width: 60%;
+    min-width: 480px;
+    margin: 2rem auto;
+    padding: $spacing-6;
+    border-radius: $spacing-1;
+    box-shadow: 0 $spacing-2 $spacing-2 $spacing-2 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  
+    h2 {
+        text-align: center;
+        margin-bottom: $spacing-4;
+    }
+  
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-3;
+        margin-bottom: $spacing-4;
+
+        select, input {
+            width: 100%;
+            border: $border-1 solid $text-color;
+            border-radius: $spacing-1;
+            background-color: transparent;
+            padding: $spacing-2;
+            color: $text-color;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: $spacing-2;
+            border-radius: $spacing-1;
+        }
+    }
+  
+    .scanned-list {
+        margin-top: $spacing-4;
+        ul {
+            padding-left: $spacing-4;
+            li {
+                margin-bottom: $spacing-1;
+                color: $text-color;
+            }
+        }   
+    }
+
+    .checkout-response {
+        margin-top: $spacing-4;
+
+        h3 {
+            margin-bottom: $spacing-2;
+        }
+
+        ul {
+            padding-left: $spacing-4;
+            li {
+                margin-bottom: $spacing-1;
+            }
+        }
+
+        strong {
+            display: block;
+            margin-top: $spacing-2;
+            font-size: 1.2rem;
+            color: $text-color;
+        }
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: $spacing-3;
+
+        button {
+            padding: $spacing-2 $spacing-3;
+        }
+    }
+}
