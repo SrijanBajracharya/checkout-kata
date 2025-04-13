@@ -46,7 +46,7 @@ public class ItemControllerIT extends IntegrationBaseTest {
         CreateItemRequest request = buildItemRequest("Apple", BigDecimal.valueOf(10), null);
 
         mockMvc.perform(
-                        post("/api/v1/item")
+                        post("/api/v1/items")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(request))
 
@@ -60,10 +60,10 @@ public class ItemControllerIT extends IntegrationBaseTest {
     @Test
     void upsertItem_shouldCreateItemWithOffer_whenRequestIsValid() throws Exception {
         CreateItemRequest request = buildItemRequest("Banana", BigDecimal.valueOf(10),
-                OfferRequest.builder().quantity(2L).discountPrice(BigDecimal.valueOf(8)).build());
+                OfferRequest.builder().quantity(2).discountPrice(BigDecimal.valueOf(8)).build());
 
         mockMvc.perform(
-                        post("/api/v1/item")
+                        post("/api/v1/items")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(request))
 
@@ -88,10 +88,10 @@ public class ItemControllerIT extends IntegrationBaseTest {
         assertNull(items.getFirst().getOffer());
 
         CreateItemRequest request = buildItemRequest("Banana", BigDecimal.valueOf(10),
-                OfferRequest.builder().quantity(2L).discountPrice(BigDecimal.valueOf(8)).build());
+                OfferRequest.builder().quantity(2).discountPrice(BigDecimal.valueOf(8)).build());
 
         mockMvc.perform(
-                        post("/api/v1/item")
+                        post("/api/v1/items")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(request))
 

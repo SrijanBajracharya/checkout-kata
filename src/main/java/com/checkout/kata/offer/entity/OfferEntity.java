@@ -24,7 +24,7 @@ public class OfferEntity {
     private ItemEntity item;
 
     @Column(name = "quantity", nullable = false)
-    private Long quantity;
+    private Integer quantity;
 
     @Column(name = "discount_price", nullable = false)
     private BigDecimal discountPrice;
