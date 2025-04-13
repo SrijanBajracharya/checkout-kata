@@ -1,8 +1,18 @@
 # Checkout-kata
 
 ## Overview
-Checkout Kata is a prototype project designed to simulate a supermarket checkout process. 
-The system calculates the total price of a collection of items, applying relevant special offers provided by the supermarket. 
+Checkout Kata is a prototype application that models the supermarket checkout process. 
+It computes the total price of a set of items, incorporating any applicable promotional offers. 
+Built following Domain-Driven Design (DDD) and clean code principles, the architecture is structured for clarity and maintainability.
+
+The system is designed with scalability in mind and can be extended to support an event-driven architecture using ApplicationEventPublisher. 
+The application is organized into distinct layers: controller, business, storage, and entity. 
+Incoming requests are first mapped to domain objects in the gateway layer. 
+These domain objects are then transformed into entities within the storage layer for persistence. 
+Once stored, they are converted back into domain objects, passed through the service layer, and returned to the gateway 
+layer to be mapped into response objects. 
+This layered transformation ensures a clear alignment with the business domain.
+
 The project consists of two main endpoints:
 
 1. Create Item with Offer: Allows the creation of items along with their associated offers.
