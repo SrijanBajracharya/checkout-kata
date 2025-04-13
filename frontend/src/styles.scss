@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use './app/scss/variables' as *;
+
+.btn{
+    margin: $spacing-1;
+    padding: $spacing-3 $spacing-6;
+    border: none;
+    color: $text-color;
+    border-radius: $spacing-1;
+    cursor: pointer;
+
+    &.btn-primary{
+        background-color: $btn-color-primary;
+    }   
+    
+    &.btn-secondary{
+        background-color: $btn-color-secondary;
+    } 
+
+    &:hover{
+        opacity: $opacity-default;
+    }
+}
