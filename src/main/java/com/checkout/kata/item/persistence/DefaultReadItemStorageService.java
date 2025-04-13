@@ -29,4 +29,10 @@ public class DefaultReadItemStorageService implements ReadItemStorageService {
         List<Item> items = savedItems.stream().map(itemEntityMapper::mapToDomain).toList();
         return items.stream().collect(Collectors.toMap(Item::getName, Function.identity()));
     }
+
+    @Override
+    public List<String> getAllItemNames() {
+        return itemEntityRepository.findAllNames();
+    }
+
 }

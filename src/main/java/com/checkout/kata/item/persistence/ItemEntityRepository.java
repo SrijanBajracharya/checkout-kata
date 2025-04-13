@@ -2,6 +2,7 @@ package com.checkout.kata.item.persistence;
 
 import com.checkout.kata.item.entity.ItemEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,4 +15,8 @@ public interface ItemEntityRepository extends JpaRepository<ItemEntity, Long> {
     Optional<ItemEntity> findByName(String name);
 
     List<ItemEntity> findByNameIn(Set<String> names);
+
+    @Query("select i.name from ItemEntity i")
+    List<String> findAllNames();
+
 }

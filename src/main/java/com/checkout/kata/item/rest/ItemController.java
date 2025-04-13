@@ -5,10 +5,9 @@ import com.checkout.kata.item.domain.dto.response.CreateItemResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/items")
@@ -20,5 +19,10 @@ public class ItemController {
     @PostMapping
     public ResponseEntity<CreateItemResponse> upsertItem(@RequestBody @Valid CreateItemRequest createItemRequest){
         return ResponseEntity.ok(itemGateway.upsertItem(createItemRequest));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<String>> getItemsName(){
+        return ResponseEntity.ok(itemGateway.getItemNames());
     }
 }
