@@ -28,6 +28,7 @@ The project consists of two main endpoints:
 - **Testcontainers**: Simplifying integration testing.
 - **Docker**: Simplified deployment and containerization.
 - **mysql**: The relational database used for persisting data.
+- **angular 19**
 
 ---
 
@@ -164,4 +165,23 @@ POST: http://localhost:8080/api/v1/checkout
         }
     ]
 }
+```
+
+### 3. Get Item Names<br>
+Endpoint:
+```
+GET: http://localhost:8080/api/v1/items
+```
+
+## Frontend
+To run angular application 
+go to frontend 
+
+```
+cd frontend
+```
+### Run application
+Application will run on localhost:4200
+```
+ng serve
 ```
